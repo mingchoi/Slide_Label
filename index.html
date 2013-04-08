@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slide Label</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+    <script src="jquery.Slide_Label.js"></script>
+    <style type="text/css">
+      .Slide_Label_Gap:before {
+        display: block;
+        position: absolute;
+        top: -20px;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 20px;
+        box-shadow: 0px 7px 10px -5px #000;
+      }
+      #previewA {
+        background: #FFF;
+        padding-top: 10px;
+        padding-bottom: 1px;
+        box-shadow: 0px 3px 10px -1px #333;
+      }
+      #previewB {
+        background: #FFF;
+        padding-top: 5px;
+        border: 3px dashed #F80;
+        border-top: 0px;
+        color: #F80;
+        text-align: center;
+      }
+      #myWords {
+        position: relative;
+        width: 128px;
+        margin: 11px;
+        border: 1px solid #999;
+        border-radius: 3px;
+      }
+      #myWords:before {
+        position: absolute;
+        top: -20px;
+        left: 25%;
+        margin-left: -10px;
+        border: 10px solid transparent;
+        border-bottom: 10px solid #999;
+        content: "";
+      }
+      #myWords:after {
+        position: absolute;
+        top: -16px;
+        left: 25%;
+        margin-left: -8px;
+        border: 8px solid transparent;
+        border-bottom: 10px solid #FFF;
+        content: "";
+      }
+    </style>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#myLink').Slide_Label($("<div id='previewA' style='width: 150px; text-align: center'><img src='mingchoi.na.png' width='128' height='128' /><div id='myWords'> This is a Slide Label which made of div element, you can add any HTML5 element like text, photo, music and video inside.</div></div>"));
+        $('#myLink2').Slide_Label($('<div>', {id: 'previewB', style: 'width: 150px'}).append($('<h4>(ノﾟ∀ﾟ)ノ⌒☆</h4>')));
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Slide Label</h1>
+    <p>
+      <h3>How to use:</h3><code>$("#myLink").Slide_Label( $("&lt;div id='myDiv' style='width: 150px' &gt;content&lt;/div&gt;") );</code>
+      <h5> or</h5>
+      <pre>$('#myLink').Slide_Label(
+  $('&lt;div&gt;', {id: 'myDiv', style: 'width: 150px', text: 'content'})
+)</pre>
+    </p>
+    <h3>example:</h3>
+    <p><span>Just move your mouse to </span><a id="myLink">here</a><span> and then the label will appear.</span></p>
+    <p><span>You can style your own css like </span><a id="myLink2">this</a><span> by editing </span><code>.Slide_Label_Gap</code><span> and the div which you have send into the function.</span></p>
+  </body>
+</html>
